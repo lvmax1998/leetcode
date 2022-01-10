@@ -19,7 +19,6 @@ public:
             end = path.find('/', start + 1);
 
             string s = path.substr(start + 1, end - start - 1);
-            // cout << s << endl;
 
             if (s.length() && s.compare(".") != 0)
             {
