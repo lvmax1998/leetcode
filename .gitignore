@@ -1,1 +1,3 @@
 .vscode
+*.txt
+.leetcode.code-workspace
