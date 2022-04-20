@@ -5,32 +5,24 @@
  */
 #include "head.h"
 // @lc code=start
-class Solution
-{
+class Solution {
 public:
-    string simplifyPath(string path)
-    {
+    string simplifyPath(string path) {
         stack<string> st;
 
         int start, end;
         start = path.find('/');
-        while (start != string::npos && start != path.size() - 1)
-        {
+        while (start != string::npos && start != path.size() - 1) {
             end = path.find('/', start + 1);
 
             string s = path.substr(start + 1, end - start - 1);
 
-            if (s.length() && s.compare(".") != 0)
-            {
-                if (s.compare("..") == 0)
-                {
-                    if (!st.empty())
-                    {
+            if (s.length() && s.compare(".") != 0) {
+                if (s.compare("..") == 0) {
+                    if (!st.empty()) {
                         st.pop();
                     }
-                }
-                else
-                {
+                } else {
                     st.push(s);
                 }
             }
@@ -38,15 +30,13 @@ public:
             start = end;
         }
 
-        if (st.empty())
-        {
+        if (st.empty()) {
             return "/";
         }
 
         string re = st.top();
         st.pop();
-        while (!st.empty())
-        {
+        while (!st.empty()) {
             re = st.top() + "/" + re;
             // cout << st.top() << endl;
             st.pop();
