@@ -1,4 +1,4 @@
 .vscode
-.leetcode.code-workspace
 *.txt
-todo
+.leetcode.code-workspace
+notdone
